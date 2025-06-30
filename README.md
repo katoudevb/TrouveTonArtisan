@@ -45,16 +45,16 @@ git clone https://github.com/votre-utilisateur/artisans-aura.git](https://github
 cd TrouveTonArtisan
 
 #Installer les dépendances
-npm install
+- npm install
 
 #Lancer le frontend
-npm run dev
+- npm run dev
 
 #Lancer MailDev (dans un autre terminal)
-npx maildev
+- npx maildev
 
 #Déploiement 
-npm run build
+- npm run build
 
 ## 🤵🏼‍♀️ Auteur
 Kat — Développeuse Web Full Stack
