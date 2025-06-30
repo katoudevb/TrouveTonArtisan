@@ -40,23 +40,21 @@ Permettre aux citoyens de rechercher un artisan par catégorie, spécialité ou 
 
 ## 🚀 Installation
 
-```bash
-# Cloner le repo
+#Cloner le repo
 git clone https://github.com/votre-utilisateur/artisans-aura.git](https://github.com/katoudevb/TrouveTonArtisan.git
 cd TrouveTonArtisan
 
-# Installer les dépendances
+#Installer les dépendances
 npm install
 
-# Lancer le frontend
+#Lancer le frontend
 npm run dev
 
-# Lancer MailDev (dans un autre terminal)
+#Lancer MailDev (dans un autre terminal)
 npx maildev
 
-# Déploiement 
+#Déploiement 
 npm run build
-
 
 ## 🤵🏼‍♀️ Auteur
 Kat — Développeuse Web Full Stack
