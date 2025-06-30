@@ -1,0 +1,131 @@
+<main>
+    <!-- Conteneur principal avec marges -->
+    <div class="container mt-4 mb-2">
+
+        <!-- Bloc d'affichage de l'artisan (si trouvé) -->
+        <div *ngIf="artisan; else noArtisan" class="details d-flex justify-content-center">
+
+            <!-- Carte Bootstrap contenant les infos de l’artisan -->
+            <div class="card text-center p-3 mb-2">
+                <div class="card-body">
+
+                    <!-- Nom -->
+                    <h1 class="card-title">{{ artisan.name }}</h1>
+
+                    <!-- Note avec icône étoile -->
+                    <p class="card-text">
+                        Note : {{ artisan.note }} <i class="fa-solid fa-star"></i>
+                    </p>
+
+                    <!-- Spécialité -->
+                    <p class="card-text">Spécialité : {{ artisan.specialty }}</p>
+
+                    <!-- Localisation -->
+                    <p class="card-text">Localisation : {{ artisan.location }}</p>
+
+                    <!-- Description libre de l’artisan -->
+                    <p class="text-start propos">À propos : {{ artisan.about }}</p>
+
+                    <!-- Lien vers le site si présent -->
+                    <p *ngIf="artisan.website">
+                        <i class="fa-solid fa-globe"></i>
+                        <a [href]="artisan.website" target="_blank">{{ artisan.website }}</a>
+                    </p>
+
+                    <!-- Message alternatif si aucun site n’est renseigné -->
+                    <p *ngIf="!artisan.website">
+                        Aucun site web disponible pour cet artisan
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Template alternatif si aucun artisan n’est trouvé -->
+        <ng-template #noArtisan>
+            <div class="alert alert-warning" role="alert">
+                Artisan non trouvé.
+            </div>
+        </ng-template>
+
+        <!-- Formulaire de contact lié à un Reactive Form (formGroup) -->
+        <div class="formulaire d-flex justify-content-center mt-4">
+            <div class="card w-100 p-3 mb-2" style="max-width: 1080px;">
+
+                <!-- Titre du formulaire -->
+                <h2 class="text-center">Formulaire de Contact</h2>
+
+                <!-- Lien au FormGroup côté TS avec soumission gérée par (ngSubmit) -->
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+
+                    <!-- Champ Nom -->
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nom :</label>
+                        <input
+                            type="text"
+                            id="name"
+                            formControlName="name"
+                            class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && formControls['name'].invalid }"
+                        />
+                        <!-- Message d'erreur si invalide -->
+                        <div *ngIf="submitted && formControls['name'].invalid" class="invalid-feedback">
+                            <small *ngIf="formControls['name'].errors?.['required']">Le nom est requis.</small>
+                            <small *ngIf="formControls['name'].errors?.['minlength']">Le nom doit comporter au moins 3 caractères.</small>
+                        </div>
+                    </div>
+
+                    <!-- Champ Objet -->
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Objet :</label>
+                        <input
+                            type="text"
+                            id="subject"
+                            formControlName="subject"
+                            class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && formControls['subject'].invalid }"
+                        />
+                        <!-- Message d'erreur si invalide -->
+                        <div *ngIf="submitted && formControls['subject'].invalid" class="invalid-feedback">
+                            <small *ngIf="formControls['subject'].errors?.['required']">L'objet est requis.</small>
+                            <small *ngIf="formControls['subject'].errors?.['minlength']">L'objet doit comporter au moins 5 caractères.</small>
+                        </div>
+                    </div>
+
+                    <!-- Champ Message -->
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message :</label>
+                        <textarea
+                            id="message"
+                            formControlName="message"
+                            class="form-control"
+                            rows="4"
+                            [ngClass]="{ 'is-invalid': submitted && formControls['message'].invalid }"
+                        ></textarea>
+                        <!-- Message d'erreur si invalide -->
+                        <div *ngIf="submitted && formControls['message'].invalid" class="invalid-feedback">
+                            <small *ngIf="formControls['message'].errors?.['required']">Le message est requis.</small>
+                            <small *ngIf="formControls['message'].errors?.['minlength']">Le message doit comporter au moins 10 caractères.</small>
+                        </div>
+                    </div>
+
+                    <!-- Bouton d'envoi -->
+                    <div class="d-grid">
+                        <button type="submit" class="btn">Envoyer</button>
+                    </div>
+                </form>
+
+                <!-- Message de succès -->
+                <div *ngIf="successMessage" class="alert alert-success mt-3 text-center">
+                    {{ successMessage }}
+                </div>
+
+                <!-- Message d’erreur -->
+                <div *ngIf="errorMessage" class="alert alert-danger mt-3 text-center">
+                    {{ errorMessage }}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>

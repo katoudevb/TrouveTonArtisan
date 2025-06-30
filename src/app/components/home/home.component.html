@@ -1,0 +1,63 @@
+<!-- Section explicative pour guider l'utilisateur dans la recherche d'un artisan -->
+<section class="find-artisan">
+  <!-- Titre principal centré avec marge en bas -->
+  <h2 class="text-center mb-4">Comment trouver mon artisan ?</h2>
+  
+  <!-- Liste ordonnée centrée avec marge en bas, décrit étapes à suivre -->
+  <ol class="text-center mb-4">
+    <li>
+      <!-- Sous-titre de l'étape -->
+      <h3>Choisir une catégorie d'artisanat dans le menu</h3>
+      <!-- Description de l'action à réaliser -->
+      <p>Utilisez le menu pour sélectionner une catégorie d’artisanat (ex. électricité, plomberie, menuiserie...).</p>
+    </li>
+    <li>
+      <h3>Choisir un artisan</h3>
+      <p>Consultez la liste des artisans disponibles grâce à la barre de recherche.</p>
+    </li>
+    <li>
+      <h3>Le contacter via le formulaire de contact</h3>
+      <p>Remplissez le formulaire de contact sur la fiche de l’artisan pour envoyer votre demande.</p>
+    </li>
+    <li>
+      <h3>Une réponse sera apportée sous 48H</h3>
+      <p>Une réponse vous sera apportée sous 48 heures par l’artisan ou notre équipe.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- Section dynamique affichant les artisans du mois, avec Bootstrap pour la mise en page -->
+<section class="container my-5">
+  <!-- Titre centré avec marge, classe personnalisée pour ciblage CSS -->
+  <h2 class="text-center mb-4 artisans">Artisans du mois</h2>
+
+  <!-- Grille Bootstrap : ligne contenant plusieurs colonnes -->
+  <div class="row">
+    <!-- Boucle Angular affichant chaque artisan dans une colonne de taille md-4 (3 colonnes par ligne) -->
+    <div class="col-md-4 mb-4" *ngFor="let artisan of artisansDuMois">
+      <!-- Carte Bootstrap avec hauteur pleine, ombre et style personnalisé -->
+      <div class="card h-100 shadow-sm card-artisan text-dark">
+        <div class="card-body">
+          <!-- Nom de l'artisan interpolé -->
+          <h5 class="card-title">{{ artisan.nom }}</h5>
+          
+          <!-- Affichage dynamique des étoiles de notation -->
+          <div class="stars">
+            <ng-container *ngFor="let star of [1,2,3,4,5]; let i = index">
+              <!-- Classe conditionnelle : étoile pleine jaune si note >= index, sinon étoile vide grisée -->
+              <i class="bi"
+                 [ngClass]="i < artisan.note ? 'bi-star-fill text-warning' : 'bi-star text-muted'">
+              </i>
+            </ng-container>
+          </div>
+          
+          <!-- Spécialité de l'artisan affichée en sous-titre avec style atténué -->
+          <h6 class="card-subtitle mb-2 text-muted">{{ artisan.specialite }}</h6>
+          
+          <!-- Localisation affichée en texte avec mise en avant -->
+          <p class="card-text"><strong>Localisation :</strong> {{ artisan.localisation }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

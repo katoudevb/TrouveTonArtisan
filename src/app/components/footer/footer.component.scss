@@ -1,0 +1,31 @@
+.footer{
+    background-color: #0074c7;
+    color: #ffffff;
+    padding: 1rem 0;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+h2 {
+    font-family: 'GraphikXXCondensed', sans-serif;
+    color: #ffffff;
+}
+
+.footer .row {
+  display: flex;
+  justify-content: space-evenly; // Espace égal entre les blocs et les bords
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0 5vw;                // Optionnel : espace sur les côtés
+}
+
+.footer .col-md-6 {
+  flex: 1 1 0;                   // Les deux colonnes prennent la même largeur
+  max-width: 500px;              // Optionnel
+  min-width: 200px;              // Optionnel
+  text-align: center;            // Centre le texte dans chaque bloc
+}

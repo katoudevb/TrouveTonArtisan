@@ -1,0 +1,12 @@
+.error-container {
+  display: flex;
+  justify-content: center;   // centre horizontalement
+  flex: 1 1 auto; // Prend l'espace restant entre header et footer
+  min-height: 0; // Annule le min-height hérité si besoin
+}
+
+.error-image {
+  width: 500px;          // largeur de l'image
+  height: 500px;
+  object-fit: contain;       // optionnel, pour garder le ratio
+}

@@ -1,0 +1,27 @@
+<main>
+  <section>
+    <div class="container mt-5 mb-5">
+      <h1 class="text-center mb-4">Nos artisans</h1>
+      <!-- Grille des artisans -->
+      <div class="row">
+        <!-- Boucle Angular *ngFor pour générer une carte par artisan dans le tableau 'artisans' -->
+        <div class="col-12 col-md-6 col-lg-4 mb-5" *ngFor="let artisan of artisans">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <!-- Affiche le nom de l'artisan -->
+              <h5 class="card-title">{{ artisan.name }}</h5>
+              <!-- Affiche la note de l'artisan avec une étoile en icône -->
+              <p class="card-text">Note: {{ artisan.note }} <i class="fa-solid fa-star"></i></p>
+              <!-- Affiche la spécialité -->
+              <p class="card-text">Spécialité : {{ artisan.specialty }}</p>
+              <!-- Affiche la localisation -->
+              <p class="card-text">Localisation : {{ artisan.location }}</p>
+              <!-- Bouton qui déclenche la méthode 'viewDetails' avec l'id de l'artisan -->
+              <button (click)="viewDetails(artisan.id)" type="button" class="btn">En Savoir plus</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

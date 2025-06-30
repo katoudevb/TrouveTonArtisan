@@ -1,0 +1,40 @@
+<footer class="footer">
+  <div class="row">
+
+    <!-- Colonne gauche : Contact -->
+    <div class="col-md-6">
+      <h2>Contact</h2>
+      <p>
+        <!-- Lien vers Google Maps avec adresse complète, ouvre dans un nouvel onglet -->
+        <a 
+          href="https://www.google.com/maps/search/?q=101+cours+Charlemagne+69269+LYON+CEDEX+02+France"
+          target="_blank" 
+          rel="noopener" 
+          aria-label="Ouvrir l'adresse sur Google Maps"
+        >
+          101 cours Charlemagne<br>
+          CS 20033<br>
+          69269 LYON CEDEX 02<br>
+          France
+        </a>
+      </p>
+      <!-- Lien téléphonique cliquable pour lancer un appel sur mobile ou softphone -->
+      <p><a href="tel:+33426734000">+33 (0)4 26 73 40 00</a></p>
+    </div>
+
+    <!-- Colonne droite : Navigation des pages légales -->
+    <div class="col-md-6">
+      <nav>
+        <h2>Pages légales</h2>
+        <ul class="list-legal">
+          <!-- Liens Angular routerLink vers les pages légales -->
+          <li><a routerLink="/mentions-legales" routerLinkActive="active">Mentions légales</a></li>
+          <li><a routerLink="/cgu" routerLinkActive="active">Données personnelles</a></li>
+          <li><a routerLink="/confidentialite" routerLinkActive="active">Accessibilité</a></li>
+          <li><a routerLink="/cookies" routerLinkActive="active">Cookies</a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+</footer>

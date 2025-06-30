@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'GraphikCompact';
+  src: url('../src/assets/fonts/GraphikCompact-Thin-Trial.woff2') format('woff2'),
+       url('../src/assets/fonts/GraphikCompact-Thin-Trial.woff') format('woff'),
+       url('../src/assets/fonts/GraphikCompact-Thin-Trial.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GraphikCompact';
+  src: url('../src/assets/fonts/GraphikCompact-Light-Trial.woff2') format('woff2'),
+       url('../src/assets/fonts/GraphikCompact-Light-Trial.woff') format('woff'),
+       url('../src/assets/fonts/GraphikCompact-Light-Trial.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'GraphikXCondensed', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #00497c;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'GraphikXXCondensed', sans-serif;
+  color: #0074c7;
+}
+
+/* ----- Sticky Footer Layout (footer toujours en bas) ----- */
+
+/* 1. Le body prend toute la hauteur de la fenêtre et devient un conteneur flex vertical */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Le body utilise flexbox pour empiler header, main et footer verticalement */
+body {
+  min-height: 100vh;           // Prend au moins toute la hauteur de la fenêtre
+  display: flex;               // Active flexbox
+  flex-direction: column;      // Empile verticalement
+}
+
+/* 3. app-root (le composant racine Angular) prend toute la hauteur disponible */
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  flex: 1 0 auto;
+}
+
+/* 4. Le main prend tout l'espace restant entre header et footer */
+main {
+  flex: 1 0 auto;              // Prend l'espace restant
+  display: block;
+}
+
+/* 5. Le footer ne rétrécit pas et reste collé en bas */
+app-footer, .footer {
+  flex-shrink: 0;              // Ne rétrécit pas
+  width: 100%;                 // Prend toute la largeur
+}
+
+/* ----- Fin Sticky Footer Layout ----- */

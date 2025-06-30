@@ -1,0 +1,33 @@
+<main>
+  <section>
+    <div class="container mt-5 mb-5">
+      <!-- Titre principal centré -->
+      <h1 class="text-center mb-4">Artisans de Bâtiments</h1>
+
+      <!-- Message si aucun artisan trouvé -->
+      <div *ngIf="(batimentArtisans | categoryFilter:selectedCategory).length === 0" class="alert alert-warning text-center">
+        Aucun artisan trouvé dans cette catégorie.
+      </div>
+
+      <!-- Affichage des artisans filtrés -->
+      <div *ngIf="(batimentArtisans | categoryFilter:selectedCategory).length > 0" class="row">
+        <div class="col-12 col-md-6 col-lg-4 mb-5"
+             *ngFor="let artisan of batimentArtisans | categoryFilter:selectedCategory">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <h2 class="card-title">{{ artisan.name }}</h2>
+              <p class="card-text">
+                Note: {{ artisan.note }} <i class="fa-solid fa-star"></i>
+              </p>
+              <p class="card-text">Spécialité : {{ artisan.specialty }}</p>
+              <p class="card-text">Localisation : {{ artisan.location }}</p>
+              <button (click)="detailArtisan(artisan.id)" type="button" class="btn">
+                En Savoir plus
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
