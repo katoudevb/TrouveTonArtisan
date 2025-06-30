@@ -1,59 +1,63 @@
-# TrouveTonArtisan
+# Plateforme des Artisans - Région Auvergne Rhône-Alpes
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.13.
+Ce projet constitue la partie **frontend** d'une plateforme visant à faciliter la mise en relation entre **particuliers** et **artisans** de la région Auvergne Rhône-Alpes.
 
-## Development server
+## 🎯 Objectif
 
-To start a local development server, run:
+Permettre aux citoyens de rechercher un artisan par catégorie, spécialité ou localisation, de consulter ses informations, et de le contacter directement via un formulaire intégré.
 
-```bash
-ng serve
-```
+## 🛠️ Tehcnologies utilisées
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Framework** : Angular (dernière version)
+- **Langages** : HTML5, SCSS, JavaScript ES6+
+- **UI & Design** : Figma (responsive - mobile first)
+- **Outils** : Git, GitHub, GitHub Page, MailDev (simulateur d’emails)
+- **Conformité** :
+  - Accessibilité : WCAG 2.1
+  - SEO : titres, descriptions, balisage sémantique
+  - Sécurité : bonnes pratiques (détail dans la doc PDF)
 
-## Code scaffolding
+## 📁 Structure des pages
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- `Accueil` :
+  - Fonctionnement du site ("Comment trouver mon artisan ?")
+  - Artisans du mois (nom, note, spécialité, localisation)
+- `Liste des artisans` :
+  - Fiches artisan (cliquables vers fiche complète)
+- `Fiche artisan` :
+  - Informations détaillées + formulaire de contact
+- `Pages légales` : vides (mentions légales, accessibilité, etc.)
+- `Page 404` : page personnalisée en cas de route invalide
+- `Header/Footer` : constants sur toutes les pages
 
-```bash
-ng generate component component-name
-```
+## 📦 Prérequis
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Node.js (v20.00.05 recommandé)
+- NPM ou Yarn
+- Git, GitHub
+- MailDev (pour test de formulaire sans envoi réel)
+- IDE VS Code
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+## 🚀 Installation
 
 ```bash
-ng e2e
-```
+# Cloner le repo
+git clone https://github.com/votre-utilisateur/artisans-aura.git](https://github.com/katoudevb/TrouveTonArtisan.git
+cd TrouveTonArtisan
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+# Installer les dépendances
+npm install
 
-## Additional Resources
+# Lancer le frontend
+npm run dev
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+# Lancer MailDev (dans un autre terminal)
+npx maildev
+
+# Déploiement 
+npm run build
+
+
+## 🤵🏼‍♀️ Auteur
+Kat — Développeuse Web Full Stack
+[https://github.com/katoudevb]
