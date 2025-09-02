@@ -41,7 +41,7 @@ Permettre aux citoyens de rechercher un artisan par catégorie, spécialité ou 
 ## 🚀 Installation
 
 #Cloner le repo
-git clone https://github.com/votre-utilisateur/artisans-aura.git](https://github.com/katoudevb/TrouveTonArtisan.git
+git clone (https://github.com/katoudevb/TrouveTonArtisan.git)
 cd TrouveTonArtisan
 
 #Installer les dépendances
@@ -55,6 +55,9 @@ cd TrouveTonArtisan
 
 #Déploiement 
 - npm run build
+
+## Lien du site héberger
+https://katoudevb.github.io/TrouveTonArtisan/
 
 ## 🤵🏼‍♀️ Auteur
 Kat — Développeuse Web Full Stack
