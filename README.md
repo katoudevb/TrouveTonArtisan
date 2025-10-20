@@ -13,7 +13,7 @@ Permettre aux citoyens de rechercher un artisan par catégorie, spécialité ou 
 - **UI & Design** : Figma (responsive - mobile first)
 - **Outils** : Git, GitHub, GitHub Page, MailDev (simulateur d’emails)
 - **Conformité** :
-  - Accessibilité : WCAG 2.1
+  - Accessibilité 
   - SEO : titres, descriptions, balisage sémantique
   - Sécurité : bonnes pratiques (détail dans la doc PDF)
 
