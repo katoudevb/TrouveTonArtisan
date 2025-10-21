@@ -1,74 +1,74 @@
 <header class="shadow-sm py-2">
   <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap">
     
-    <!-- Logo (gauche) -->
-    <div class="logo me-auto">
-      <a routerLink="/">
-        <!-- Modifier la partie assets dans angular.json pour voir l'image -->
-        <img src="assets/images/Logo.png" alt="Logo" width="100" height="100" /> 
-      </a>
-    </div>
+        <!-- Logo (gauche) -->
+        <div class="logo me-auto">
+          <a routerLink="/">
+            <!-- Modifier la partie assets dans angular.json pour voir l'image -->
+            <img src="assets/images/Logo.png" alt="Logo" width="100" height="100" /> 
+          </a>
+        </div>
 
-    <!-- Menu de navigation (desktop) -->
-    <nav class="menu navbar-nav d-none d-lg-flex flex-row gap-2 ms-5 me-3">
-      <a class="btn btn-primary rounded-pill" routerLink="/" routerLinkActive="active">Accueil</a>
-      <a class="btn btn-primary rounded-pill" routerLink="/batiment" routerLinkActive="active">Bâtiments</a>
-      <a class="btn btn-primary rounded-pill" routerLink="/services" routerLinkActive="active">Services</a>
-      <a class="btn btn-primary rounded-pill" routerLink="/fabrication" routerLinkActive="active">Fabrication</a>
-      <a class="btn btn-primary rounded-pill" routerLink="/alimentaire" routerLinkActive="active">Alimentation</a>
-    </nav>
+        <!-- Menu de navigation (desktop) -->
+        <nav class="menu navbar-nav d-none d-lg-flex flex-row gap-2 ms-5 me-3">
+          <a class="btn btn-primary rounded-pill" routerLink="/" routerLinkActive="active">Accueil</a>
+          <a class="btn btn-primary rounded-pill" routerLink="/batiment" routerLinkActive="active">Bâtiments</a>
+          <a class="btn btn-primary rounded-pill" routerLink="/services" routerLinkActive="active">Services</a>
+          <a class="btn btn-primary rounded-pill" routerLink="/fabrication" routerLinkActive="active">Fabrication</a>
+          <a class="btn btn-primary rounded-pill" routerLink="/alimentaire" routerLinkActive="active">Alimentation</a>
+        </nav>
 
-    <!-- Barre de recherche (desktop) -->
-    <form class="d-none d-lg-flex" (submit)="onSearch(searchInput.value); $event.preventDefault()">
-  <input #searchInput class="form-control me-2" type="search" placeholder="Rechercher un artisan..." aria-label="Rechercher un artisan" />
-  <button class="btn btn-outline-primary" type="submit">
-    <i class="bi bi-search"></i>
-  </button>
-</form>
+        <!-- Barre de recherche (desktop) -->
+        <form class="d-none d-lg-flex" (submit)="onSearch(searchInput.value); $event.preventDefault()">
+          <input #searchInput class="form-control me-2" type="search" placeholder="Rechercher un artisan..." aria-label="Rechercher un artisan" />
+          <button class="btn btn-outline-primary" type="submit">
+          <i class="bi bi-search"></i>
+          </button>
+        </form>
 
-    <!-- Bouton menu burger (mobile) -->
-    <button
-      class="navbar-toggler d-lg-none border-0"
-      type="button"
-      data-bs-toggle="offcanvas"
-      data-bs-target="#mobileMenu"
-      aria-controls="mobileMenu"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon custom-toggler-icon"></span>
-    </button>
-  </div>
+        <!-- Bouton menu burger (mobile) -->
+          <button
+            class="navbar-toggler d-lg-none border-0"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#mobileMenu"
+            aria-controls="mobileMenu"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon custom-toggler-icon"></span>
+          </button>
+      </div>
 
-  <!-- Offcanvas menu (mobile) -->
-  <div
-  class="offcanvas offcanvas-start text-bg-dark"
-  tabindex="-1"
-  id="mobileMenu"
-  aria-labelledby="mobileMenuLabel"
->
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="mobileMenuLabel">Menu</h5>
-    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body d-flex flex-column gap-2">
-  <a class="btn btn-primary rounded-pill" routerLink="/" routerLinkActive="active">Accueil</a>
-  <a class="btn btn-primary rounded-pill" routerLink="/batiment" routerLinkActive="active">Bâtiments</a>
-  <a class="btn btn-primary rounded-pill" routerLink="/services" routerLinkActive="active">Services</a>
-  <a class="btn btn-primary rounded-pill" routerLink="/fabrication" routerLinkActive="active">Fabrication</a>
-  <a class="btn btn-primary rounded-pill" routerLink="/alimentaire" routerLinkActive="active">Alimentation</a>
+      <!-- Offcanvas menu (mobile) -->
+      <div
+        class="offcanvas offcanvas-start text-bg-dark"
+        tabindex="-1"
+        id="mobileMenu"
+        aria-labelledby="mobileMenuLabel"
+      >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="mobileMenuLabel">Menu</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column gap-2">
+        <a class="btn btn-primary rounded-pill" routerLink="/" routerLinkActive="active">Accueil</a>
+        <a class="btn btn-primary rounded-pill" routerLink="/batiment" routerLinkActive="active">Bâtiments</a>
+        <a class="btn btn-primary rounded-pill" routerLink="/services" routerLinkActive="active">Services</a>
+        <a class="btn btn-primary rounded-pill" routerLink="/fabrication" routerLinkActive="active">Fabrication</a>
+        <a class="btn btn-primary rounded-pill" routerLink="/alimentaire" routerLinkActive="active">Alimentation</a>
 
   <!-- Barre de recherche (mobile) placée ici -->
-  <form class="mt-3" (submit)="onSearch(searchInputMobile.value); $event.preventDefault()">
-    <input
-      #searchInputMobile
-      class="form-control mb-2"
-      type="search"
-      placeholder="Rechercher un artisan..."
-    />
-    <button class="btn btn-outline-light w-100" type="submit">
-      <i class="bi bi-search"></i> Rechercher
-    </button>
-  </form>
-</div>
-</div>
+      <form class="mt-3" (submit)="onSearch(searchInputMobile.value); $event.preventDefault()">
+        <input
+          #searchInputMobile
+          class="form-control mb-2"
+          type="search"
+          placeholder="Rechercher un artisan..."
+        />
+        <button class="btn btn-outline-light w-100" type="submit">
+          <i class="bi bi-search"></i> Rechercher
+        </button>
+      </form>
+    </div>
+  </div>
 </header>
